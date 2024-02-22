@@ -4,37 +4,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        body {
-            font-family: 'Times New Roman', Times, serif;
-        }
-        #graph {
-            width: 100%;
-            height: 500px;
-        }
-        #pie-chart {
-            width: 150px;
-            height: 150px;
-        }
-        .line {
-            fill: none;
-            stroke-width: 3px;
-        }
-        .area {
-         opacity: 0.2;   
-        }
-        .deselected path {
-            fill: rgba(169, 169, 169, 0.22);
-        }
-    </style>
+    <link rel="stylesheet" href="css/dc.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/select.css">
 </head>
 <body>
-    <div id="graph"></div>
-    <div id="pie-chart"></div>
-
+    <div class="controls">
+        <div class="app__time-select-container">
+            <button id="time-select-button" class="app__time-select-btn">
+                <span id="time-select-text">---</span>
+                <svg
+                    class="app__select-icon-arrow"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 512 512"
+                    id="select-arrow-icon"
+                    class="app__icon-arrowDown"
+                >
+                <path
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="48"
+                    d="M112 184l144 144 144-144"
+                />
+                </svg>
+            </button>
+            <div class="app__select-options-container">
+                <button
+                    id="option-select-default"
+                    class="app__select-option"
+                    data-value="470mF_50ohm"
+                >470&#181;F 50&#8486;</button>
+                <button
+                    class="app__select-option"
+                    data-value="470mF_100ohm"
+                >470&#181;F 100&#8486;</button>
+                <button
+                    class="app__select-option"
+                    data-value="100mF_50ohm"
+                >100&#181;F 50&#8486;</button>
+                <button
+                    class="app__select-option"
+                    data-value="100mF_100ohm"
+                >100&#181;F 100&#8486;</button>
+            </div>
+        </div>
+    </div>
+    <div class="chart_container">
+        <div id="chart-voltage"></div>
+        <div id="chart-current-voltage"></div>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
     <script src="/lib/crossfilter.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dc/4.2.7/dc.min.js" integrity="sha512-vIRU1/ofrqZ6nA3aOsDQf8kiJnAHnLrzaDh4ob8yBcJNry7Czhb8mdKIP+p8y7ixiNbT/As1Oii9IVk+ohSFiA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script type="module" src="main.js"></script>
+    <script src="js/select.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>

@@ -1,5 +1,6 @@
-const chart = Chart()
+// https://main--physik-messungen.netlify.app/
 
+const chart = Chart()
 async function getData(type, value) {
     if (!type || !value) return new Error("Missing Value")
     
@@ -8,7 +9,6 @@ async function getData(type, value) {
             return formatData(data)
         })
 }
-
 async function Chart() {
     let current_state = "100mF_50ohm"
 

@@ -60,6 +60,7 @@ async function Chart() {
 
     chartRis.margins({top: 20, left: 50, right: 50, bottom: 50})
     chartRis.yAxisPadding("10%")
+    /* chartRis.label(d => "lol") */
     chartRis
         .width(widthRes)
         .height(heightRes)
@@ -76,7 +77,6 @@ async function Chart() {
 
     const select = Select(current_state)
     select.init(async(value) => {
-        console.log(value)
         const new_data_kon = await getData("kondensator", value)
         const new_data_wid = await getData("widerstand", value)
         cfilterKon.remove((d) => d)
